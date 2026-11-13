@@ -25,7 +25,7 @@
           }
         },
         {
-          "match": "^\\s*(#include|#define)\\b",
+          "match": "^\\s*(#include)\\b",
           "captures": {
             "1": { "name": "keyword.control.directive.cm" }
           }
@@ -48,7 +48,7 @@
     },
     "keywords": {
       "name": "keyword.control.cm",
-      "match": "\\b(if|else|while|return|break|continue|goto)\\b"
+      "match": "\\b(if|else|while|return|break|continue|goto|constructor)\\b"
     },
     "instructions": {
       "name": "support.function.asm.cm",
