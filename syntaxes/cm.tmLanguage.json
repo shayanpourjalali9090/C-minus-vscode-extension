@@ -12,7 +12,8 @@
     { "include": "#registers" },
     { "include": "#numbers" },
     { "include": "#operators" },
-    { "include": "#functions" }
+    { "include": "#functions" },
+    { "include": "#variables" }
   ],
   "repository": {
     "directives": {
@@ -53,6 +54,10 @@
     "instructions": {
       "name": "support.function.asm.cm",
       "match": "\\b(AND|OR|XOR|MOV|MOVZX|ADD|SUB|IMUL|IDIV|SHL|SHR|SYSCALL|RDTSC|PUSH|POP|CMP|JE|JNE|JG|JGE|JL|JLE|CALL|RET)\\b"
+    },
+    "variables": {
+      "name": "variable.language.cm",
+      "match": "\\b(this)\\b"
     },
     "registers": {
       "name": "constant.language.register.cm",
