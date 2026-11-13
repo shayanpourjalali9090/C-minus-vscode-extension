@@ -1,0 +1,87 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "CM",
+  "scopeName": "source.cm",
+  "patterns": [
+    { "include": "#directives" },
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#keywords" },
+    { "include": "#instructions" },
+    { "include": "#types" },
+    { "include": "#registers" },
+    { "include": "#numbers" },
+    { "include": "#operators" },
+    { "include": "#functions" }
+  ],
+  "repository": {
+    "directives": {
+      "patterns": [
+        {
+          "match": "^\\s*(#include)\\s*(<[^>\\n]*>)",
+          "captures": {
+            "1": { "name": "keyword.control.directive.include.cm" },
+            "2": { "name": "string.quoted.other.lt-gt.include.cm" }
+          }
+        },
+        {
+          "match": "^\\s*(#include|#define)\\b",
+          "captures": {
+            "1": { "name": "keyword.control.directive.cm" }
+          }
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        { "name": "comment.line.double-slash.cm", "match": "//.*$" },
+        { "name": "comment.block.cm", "begin": "/\\*", "end": "\\*/" }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.cm",
+      "begin": "([\"'])",
+      "end": "\\1",
+      "patterns": [
+        { "name": "constant.character.escape.cm", "match": "\\\\." }
+      ]
+    },
+    "keywords": {
+      "name": "keyword.control.cm",
+      "match": "\\b(if|else|while|return|break|continue|goto)\\b"
+    },
+    "instructions": {
+      "name": "support.function.asm.cm",
+      "match": "\\b(AND|OR|XOR|MOV|MOVZX|ADD|SUB|IMUL|IDIV|SHL|SHR|SYSCALL|RDTSC|PUSH|POP|CMP|JE|JNE|JG|JGE|JL|JLE|CALL|RET)\\b"
+    },
+    "registers": {
+      "name": "constant.language.register.cm",
+      "match": "\\b(R[A-D]X|R[SD]I|R[BS]P|R(?:8|9|1[0-5])|E[A-D]X|[A-D]L|SPL|BPL|SIL|DIL)\\b"
+    },
+    "types": {
+      "name": "storage.type.cm",
+      "match": "\\b(struct|func|let)\\b"
+    },
+    "numbers": {
+      "name": "constant.numeric.cm",
+      "match": "\\b(0x[0-9a-fA-F]+|[0-9]+|true|false|NULL|sizeof|0b[0-1]+|0o[0-7]+)\\b"
+    },
+    "operators": {
+      "patterns": [
+        { "name": "punctuation.accessor.cm", "match": "->|\\." },
+        { "name": "keyword.operator.assignment.compound.cm", "match": "<<=|>>=|\\+=|-=|\\*=|/=|%=|&=|\\|=|\\^=" },
+        { "name": "keyword.operator.bitwise.shift.cm", "match": "<<|>>" },
+        { "name": "keyword.operator.comparison.cm", "match": "==|!=|<=|>=|<|>|\\?" },
+        { "name": "keyword.operator.logical.cm", "match": "&&|\\|\\||!" },
+        { "name": "keyword.operator.arithmetic.cm", "match": "\\+\\+|--|\\$|[+\\-*/%]" },
+        { "name": "keyword.operator.bitwise.cm", "match": "[&|^~]" },
+        { "name": "keyword.operator.addressof.cm", "match": "@" },
+        { "name": "keyword.operator.assignment.cm", "match": "=" }
+      ]
+    },
+    "functions": {
+      "name": "entity.name.function.cm",
+      "match": "\\b[A-Za-z_][A-Za-z0-9_]*(?=\\s*\\()"
+    }
+  }
+}

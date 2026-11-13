@@ -1,0 +1,36 @@
+{
+	"name": "cm-language",
+	"displayName": "CM Language",
+	"publisher": "seagullson",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.80.0"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "cm",
+				"aliases": [
+					"CM",
+					"cm"
+				],
+				"extensions": [
+					".cm"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "cm",
+				"scopeName": "source.cm",
+				"path": "./syntaxes/cm.tmLanguage.json"
+			}
+		]
+	},
+	"__metadata": {
+		"installedTimestamp": 1794086074464,
+		"targetPlatform": "undefined",
+		"size": 3606
+	}
+}
