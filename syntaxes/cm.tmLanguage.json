@@ -49,11 +49,11 @@
     },
     "keywords": {
       "name": "keyword.control.cm",
-      "match": "\\b(if|else|while|return|break|continue|goto|constructor)\\b"
+      "match": "\\b(if|else|while|return|break|continue|goto|destroy)\\b"
     },
     "instructions": {
       "name": "support.function.asm.cm",
-      "match": "\\b(AND|OR|XOR|MOV|MOVZX|ADD|SUB|IMUL|IDIV|SHL|SHR|SYSCALL|RDTSC|PUSH|POP|CMP|JE|JNE|JG|JGE|JL|JLE|CALL|RET)\\b"
+      "match": "\\b(AND|INC|DEC|CLD|OR|XOR|MOV|MOVZX|ADD|SUB|IMUL|IDIV|SHL|SHR|SYSCALL|RDTSC|PUSH|POP|REP|MOVSB|STOSB|CMP|JE|JNE|JG|JGE|JL|JLE|JMP|CALL|RET)\\b"
     },
     "variables": {
       "name": "variable.language.cm",
@@ -65,7 +65,7 @@
     },
     "types": {
       "name": "storage.type.cm",
-      "match": "\\b(struct|func|let)\\b"
+      "match": "\\b(struct|func|let|constructor|destructor)\\b"
     },
     "numbers": {
       "name": "constant.numeric.cm",
